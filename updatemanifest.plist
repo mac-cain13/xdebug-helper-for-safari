@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+   <key>Extension Updates</key>
+   <array>
+     <dict>
+       <key>CFBundleIdentifier</key>
+       <string>com.yourCompany.safari.yourExtensionName</string>
+       <key>Developer Identifier</key>
+       <string>YourCertificateID</string>
+       <key>CFBundleVersion</key>
+       <string>Your current bundle version</string>
+       <key>CFBundleShortVersionString</key>
+       <string>Your current display version</string>
+       <key>URL</key>
+       <string>Your-.safariextz-URL</string>
+     </dict>
+   </array>
+</dict>
+</plist>

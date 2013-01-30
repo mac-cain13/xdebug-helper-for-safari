@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Wrep</string>
+	<key>Builder Version</key>
+	<string>8536.26.17</string>
+	<key>CFBundleDisplayName</key>
+	<string>Xdebug Helper</string>
+	<key>CFBundleIdentifier</key>
+	<string>nl.wrep.xdebug-helper.safari</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1</string>
+	<key>CFBundleVersion</key>
+	<string>0.1</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Menus</key>
+		<array>
+			<dict>
+				<key>Identifier</key>
+				<string>togglemenu</string>
+				<key>Menu Items</key>
+				<array>
+					<dict>
+						<key>Checked State</key>
+						<real>0.0</real>
+						<key>Command</key>
+						<string>debug</string>
+						<key>Identifier</key>
+						<string>debug</string>
+						<key>Image</key>
+						<string>bug.png</string>
+						<key>Title</key>
+						<string>Debug</string>
+					</dict>
+					<dict>
+						<key>Command</key>
+						<string>profile</string>
+						<key>Identifier</key>
+						<string>profile</string>
+						<key>Image</key>
+						<string>clock.png</string>
+						<key>Title</key>
+						<string>Profile</string>
+					</dict>
+					<dict>
+						<key>Command</key>
+						<string>trace</string>
+						<key>Identifier</key>
+						<string>trace</string>
+						<key>Image</key>
+						<string>script.png</string>
+						<key>Title</key>
+						<string>Trace</string>
+					</dict>
+					<dict>
+						<key>Checked State</key>
+						<real>1</real>
+						<key>Command</key>
+						<string>disable</string>
+						<key>Identifier</key>
+						<string>disable</string>
+						<key>Image</key>
+						<string>bug-gray.png</string>
+						<key>Title</key>
+						<string>Disable</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Identifier</key>
+				<string>togglebutton</string>
+				<key>Image</key>
+				<string>bug.png</string>
+				<key>Include By Default</key>
+				<true/>
+				<key>Label</key>
+				<string>Xdebug</string>
+				<key>Menu</key>
+				<string>togglemenu</string>
+				<key>Palette Label</key>
+				<string>Xdebug helper</string>
+				<key>Tool Tip</key>
+				<string>Toggle Xdebug features</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict/>
+	</dict>
+	<key>Description</key>
+	<string>Easily activate PHP debugging, profiling and tracing</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+	<key>Update Manifest URL</key>
+	<string>https://raw.github.com/wrep/xdebug-helper-for-safari/master/updatemanifest.plist</string>
+	<key>Website</key>
+	<string>https://github.com/wrep/xdebug-helper-for-safari</string>
+</dict>
+</plist>

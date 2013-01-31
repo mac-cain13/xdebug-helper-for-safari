@@ -18,6 +18,8 @@
 	<string>0.1</string>
 	<key>Chrome</key>
 	<dict>
+		<key>Global Page</key>
+		<string>global.html</string>
 		<key>Menus</key>
 		<array>
 			<dict>
@@ -95,7 +97,12 @@
 	<key>Content</key>
 	<dict>
 		<key>Scripts</key>
-		<dict/>
+		<dict>
+			<key>End</key>
+			<array>
+				<string>injected.js</string>
+			</array>
+		</dict>
 	</dict>
 	<key>Description</key>
 	<string>Easily activate PHP debugging, profiling and tracing</string>

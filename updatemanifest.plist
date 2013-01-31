@@ -6,15 +6,15 @@
    <array>
      <dict>
        <key>CFBundleIdentifier</key>
-       <string>com.yourCompany.safari.yourExtensionName</string>
+       <string>nl.wrep.xdebug-helper.safari</string>
        <key>Developer Identifier</key>
-       <string>YourCertificateID</string>
+       <string>28RC4265JU</string>
        <key>CFBundleVersion</key>
-       <string>Your current bundle version</string>
+       <string>0.1</string>
        <key>CFBundleShortVersionString</key>
-       <string>Your current display version</string>
+       <string>0.1</string>
        <key>URL</key>
-       <string>Your-.safariextz-URL</string>
+       <string>http://dump.wrep.nl/mathijs/xdebug-helper.safariextz</string>
      </dict>
    </array>
 </dict>

@@ -16,16 +16,11 @@ var xdebug = (function() {
 	function getState(ideKey) {
 		var state = "disabled";
 
-		if (getCookie("XDEBUG_SESSION") == ideKey)
-		{
+		if (getCookie("XDEBUG_SESSION") == ideKey) {
 			state = "debugging";
-		}
-		else if (getCookie("XDEBUG_PROFILE") == ideKey)
-		{
+		} else if (getCookie("XDEBUG_PROFILE") == ideKey) {
 			state = "profiling";
-		}
-		else if (getCookie("XDEBUG_TRACE") == ideKey)
-		{
+		} else if (getCookie("XDEBUG_TRACE") == ideKey) {
 			state = "tracing";
 		}
 
@@ -34,29 +29,22 @@ var xdebug = (function() {
 
 	// Set Xdebug to the requested state
 	function setState(ideKey, newState) {
-		if (newState == "debug")
-		{
+		if (newState == "debug") {
 			// Set debugging on
 			setCookie("XDEBUG_SESSION", ideKey, 24);
 			deleteCookie("XDEBUG_PROFILE");
 			deleteCookie("XDEBUG_TRACE");
-		}
-		else if (newState == "profile")
-		{
+		} else if (newState == "profile") {
 			// Set profiling on
 			deleteCookie("XDEBUG_SESSION");
 			setCookie("XDEBUG_PROFILE", ideKey, 24);
 			deleteCookie("XDEBUG_TRACE");
-		}
-		else if (newState == "trace")
-		{
+		} else if (newState == "trace") {
 			// Set tracing on
 			deleteCookie("XDEBUG_SESSION");
 			deleteCookie("XDEBUG_PROFILE");
 			setCookie("XDEBUG_TRACE", ideKey, 24);
-		}
-		else
-		{
+		} else {
 			// Disable all Xdebug functions
 			deleteCookie("XDEBUG_SESSION");
 			deleteCookie("XDEBUG_PROFILE");
@@ -67,31 +55,27 @@ var xdebug = (function() {
 	}
 
 	// Set a cookie
-	function setCookie(name, value, hours)
-	{
+	function setCookie(name, value, hours) {
 		var exp = new Date();
 		exp.setTime(exp.getTime() + (hours * 60 * 60 * 1000));
 		document.cookie = name + "=" + value + "; expires=" + exp.toGMTString() + "; path=/";
 	}
 
 	// Get the cookie contents
-	function getCookie(name)
-	{
+	function getCookie(name) {
 		// Search for the start of the goven cookie
 		var prefix = name + "=",
 			cookieStartIndex = document.cookie.indexOf(prefix),
 			cookieEndIndex;
 
 		// If the cookie is not found return null
-		if (cookieStartIndex == -1)
-		{
+		if (cookieStartIndex == -1) {
 			return null;
 		}
 
 		// Look for the end of the cookie
 		cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex + prefix.length);
-		if (cookieEndIndex == -1)
-		{
+		if (cookieEndIndex == -1) {
 			cookieEndIndex = document.cookie.length;
 		}
 
@@ -100,8 +84,7 @@ var xdebug = (function() {
 	}
 
 	// Remove a cookie
-	function deleteCookie(name)
-	{
+	function deleteCookie(name) {
 		setCookie(name, null, -60);
 	}
 

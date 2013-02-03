@@ -7,8 +7,15 @@ debugging, profiling and tracing of your PHP-code easily.
 
 State of the extension
 ----------------------
-We've just started development and the extension is not yet stable, also this Readme is far from incomplete.
-Contributions are very welcome, but don't expect anything usable yet!
+The extension is currently functional, but it is not yet stable and/or finished. Contributions are very welcome!
+
+How to install this extension?
+------------------------------
+**Stable version:** Not yet available, we hope to release stable versions through the Safari Extension Gallery.
+
+**Development version:** [Download the source from GitHub](https://github.com/wrep/xdebug-helper-for-safari/archive/master.zip)
+and [load the extension into the extensionbuilder](https://developer.apple.com/library/safari/#documentation/Tools/Conceptual/SafariExtensionGuide/UsingExtensionBuilder/UsingExtensionBuilder.html%23//apple_ref/doc/uid/TP40009977-CH2-SW1)
+yourself so you can install it from there. Note that you need your own [Safari Developer Program](https://developer.apple.com/devcenter/safari/index.action) certificate to sign the extension.
 
 How do I contribute?
 --------------------
@@ -20,7 +27,7 @@ B: [Submit a pull request](https://help.github.com/articles/using-pull-requests)
 2. Commit and push your changes to your branch
 3. When you're happy send us a pull request!
 
-Pro-tip: Make sure to build upon the latest version of the code and keep pull request as small as possible. This makes your pull request easy to merge.
+_**Pro-tip:** Make sure to build upon the latest version of the code and keep pull request as small as possible. This makes your pull request easy to merge._
 
 License
 -------

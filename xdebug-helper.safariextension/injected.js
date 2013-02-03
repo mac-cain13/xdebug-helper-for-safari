@@ -13,7 +13,22 @@ var xdebug = (function() {
 		};
 
 	function getState(ideKey) {
-		return "debugging";
+		var state = "disabled";
+
+		if (getCookie("XDEBUG_SESSION") == ideKey)
+		{
+			state = "debugging";
+		}
+		else if (getCookie("XDEBUG_PROFILE") == ideKey)
+		{
+			state = "profiling";
+		}
+		else if (getCookie("XDEBUG_TRACE") == ideKey)
+		{
+			state = "tracing";
+		}
+
+		return state;
 	}
 
 	function setState(ideKey, newState) {

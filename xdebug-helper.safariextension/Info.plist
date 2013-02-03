@@ -35,7 +35,7 @@
 						<key>Identifier</key>
 						<string>debugging</string>
 						<key>Image</key>
-						<string>bug.png</string>
+						<string>debugging.png</string>
 						<key>Title</key>
 						<string>Debug</string>
 					</dict>
@@ -45,7 +45,7 @@
 						<key>Identifier</key>
 						<string>profiling</string>
 						<key>Image</key>
-						<string>clock.png</string>
+						<string>profiling.png</string>
 						<key>Title</key>
 						<string>Profile</string>
 					</dict>
@@ -55,7 +55,7 @@
 						<key>Identifier</key>
 						<string>tracing</string>
 						<key>Image</key>
-						<string>script.png</string>
+						<string>tracing.png</string>
 						<key>Title</key>
 						<string>Trace</string>
 					</dict>
@@ -67,7 +67,7 @@
 						<key>Identifier</key>
 						<string>disabled</string>
 						<key>Image</key>
-						<string>bug-gray.png</string>
+						<string>disabled.png</string>
 						<key>Title</key>
 						<string>Disable</string>
 					</dict>
@@ -80,7 +80,7 @@
 				<key>Identifier</key>
 				<string>togglebutton</string>
 				<key>Image</key>
-				<string>bug.png</string>
+				<string>disabled.png</string>
 				<key>Include By Default</key>
 				<true/>
 				<key>Label</key>

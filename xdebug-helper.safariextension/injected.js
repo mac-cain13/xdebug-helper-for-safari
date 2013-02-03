@@ -5,7 +5,7 @@ var xdebug = (function() {
 				if ("getState" == event.name) {
 					safari.self.tab.dispatchMessage("getStateResponse", getState(event.message.ideKey));
 				} else if ("setState" == event.name) {
-					setState(event.message.ideKey, event.message.state);
+					safari.self.tab.dispatchMessage("setStateResponse", setState(event.message.ideKey, event.message.state));
 				} else {
 					console.log("[Xdebug helper] Injected script received unknown message: " + event.name);
 				}
@@ -32,7 +32,36 @@ var xdebug = (function() {
 	}
 
 	function setState(ideKey, newState) {
-		alert("setState(" + ideKey + ", " + newState + ")");
+		if (newState == "debug")
+		{
+			// Set debugging on
+			setCookie("XDEBUG_SESSION", ideKey, 24);
+			deleteCookie("XDEBUG_PROFILE");
+			deleteCookie("XDEBUG_TRACE");
+		}
+		else if (newState == "profile")
+		{
+			// Set profiling on
+			deleteCookie("XDEBUG_SESSION");
+			setCookie("XDEBUG_PROFILE", ideKey, 24);
+			deleteCookie("XDEBUG_TRACE");
+		}
+		else if (newState == "trace")
+		{
+			// Set tracing on
+			deleteCookie("XDEBUG_SESSION");
+			deleteCookie("XDEBUG_PROFILE");
+			setCookie("XDEBUG_TRACE", ideKey, 24);
+		}
+		else
+		{
+			// Disable all Xdebug functions
+			deleteCookie("XDEBUG_SESSION");
+			deleteCookie("XDEBUG_PROFILE");
+			deleteCookie("XDEBUG_TRACE");
+		}
+
+		return getState(ideKey);
 	}
 
 	// Set a cookie

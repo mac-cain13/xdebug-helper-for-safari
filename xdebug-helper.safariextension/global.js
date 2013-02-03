@@ -8,7 +8,7 @@ var xdebug = (function() {
 
 			// Validate the state of the menu items
 			onValidate : function(event) {
-				if (event.target.identifier != "togglebutton") {
+				if ("togglebutton" != event.target.identifier) {
 					event.target.checkedState = (event.target.identifier == currentState) ? SafariExtensionMenuItem.CHECKED : SafariExtensionMenuItem.UNCHECKED;
 				}
 			},
@@ -20,7 +20,7 @@ var xdebug = (function() {
 
 			// Handle incomming messages
 			onMessage : function(event) {
-				if (event.name == "getStateResponse") {
+				if ("getStateResponse" == event.name || "setStateResponse" == event.name) {
 					currentState = event.message;
 				}
 			}

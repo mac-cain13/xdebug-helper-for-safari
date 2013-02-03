@@ -1,9 +1,11 @@
 var xdebug = (function() {
 	var currentState = "noPage",
 		exposed = {
-			// Handle activation of a tab/window
-			onTabSwitched : function(event) {
-				updateState();
+			// Handle page changes (other tab or window is active or navigated to other page etc)
+			onPageChanged : function(event) {
+				// Triggers an update of the currentState variable
+				currentState = "noPage";
+				dispatchMessageToActiveTabInActiveWindow("getState", { ideKey: safari.extension.settings.ideKey });
 			},
 
 			// Validate the state of the menu items
@@ -31,12 +33,6 @@ var xdebug = (function() {
 			}
 		};
 
-	// Triggers an update of the currentState variable
-	function updateState() {
-		currentState = "noPage";
-		dispatchMessageToActiveTabInActiveWindow("getState", { ideKey: safari.extension.settings.ideKey });
-	}
-
 	// Dispatch a message to the active tab if there is one
 	function dispatchMessageToActiveTabInActiveWindow(command, message) {
 		// Check if there is a page in the activeTab
@@ -51,8 +47,9 @@ var xdebug = (function() {
 	return exposed;
 })();
 
-safari.application.addEventListener("activate", xdebug.onTabSwitched, true);
-safari.application.addEventListener("navigate", xdebug.onTabSwitched, true);
+// Add event listeners
+safari.application.addEventListener("activate", xdebug.onPageChanged, true);
+safari.application.addEventListener("navigate", xdebug.onPageChanged, true);
 safari.application.addEventListener("validate", xdebug.onValidate, true);
 safari.application.addEventListener("command", xdebug.onCommand, true);
 safari.application.addEventListener("message", xdebug.onMessage, false);

@@ -12,6 +12,7 @@ var xdebug = (function() {
 			}
 		};
 
+	// Get the current Xdebug state
 	function getState(ideKey) {
 		var state = "disabled";
 
@@ -31,6 +32,7 @@ var xdebug = (function() {
 		return state;
 	}
 
+	// Set Xdebug to the requested state
 	function setState(ideKey, newState) {
 		if (newState == "debug")
 		{
@@ -72,7 +74,7 @@ var xdebug = (function() {
 		document.cookie = name + "=" + value + "; expires=" + exp.toGMTString() + "; path=/";
 	}
 
-	// Get the content in a cookie
+	// Get the cookie contents
 	function getCookie(name)
 	{
 		// Search for the start of the goven cookie
@@ -106,7 +108,7 @@ var xdebug = (function() {
 	return exposed;
 })();
 
-// Only install even listeners in the main page
+// Only install event listeners in the main page
 if (window.top === window) {
 	safari.self.addEventListener("message", xdebug.onMessage, false);
 }

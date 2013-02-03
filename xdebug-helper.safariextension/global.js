@@ -15,7 +15,7 @@ var xdebug = (function() {
 
 			// Handle commands such as menu clicks
 			onCommand : function(event) {
-				safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("setStatus", event.command);
+				safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("setState", { state: event.command, ideKey: safari.extension.settings.ideKey });
 			},
 
 			// Handle incomming messages
@@ -27,7 +27,7 @@ var xdebug = (function() {
 		};
 
 	function updateState() {
-		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("getState", null);
+		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("getState", { ideKey: safari.extension.settings.ideKey });
 	}
 
 	return exposed;

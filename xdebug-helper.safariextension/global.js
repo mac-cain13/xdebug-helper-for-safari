@@ -1,5 +1,5 @@
 var xdebug = (function() {
-	var currentState = "disabled",
+	var currentState = "noPage",
 		exposed = {
 			// Handle activation of a tab/window
 			onTabSwitched : function(event) {
@@ -9,13 +9,18 @@ var xdebug = (function() {
 			// Validate the state of the menu items
 			onValidate : function(event) {
 				if ("togglebutton" != event.target.identifier) {
-					event.target.checkedState = (event.target.identifier == currentState) ? SafariExtensionMenuItem.CHECKED : SafariExtensionMenuItem.UNCHECKED;
+					var checkMenuItem = ("noPage" == currentState) ? "disabled" : currentState;
+					event.target.checkedState = (checkMenuItem == event.target.identifier) ? SafariExtensionMenuItem.CHECKED : SafariExtensionMenuItem.UNCHECKED;
+					event.target.disabled = ("noPage" == currentState);
 				}
 			},
 
 			// Handle commands such as menu clicks
 			onCommand : function(event) {
-				safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("setState", { state: event.command, ideKey: safari.extension.settings.ideKey });
+				var isDispatched = dispatchMessageToActiveTabInActiveWindow("setState", { state: event.command, ideKey: safari.extension.settings.ideKey });
+				if (!isDispatched) {
+					alert("Failed to toggle to the requested state. Please refresh and try again.");
+				}
 			},
 
 			// Handle incomming messages
@@ -26,8 +31,21 @@ var xdebug = (function() {
 			}
 		};
 
+	// Triggers an update of the currentState variable
 	function updateState() {
-		safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("getState", { ideKey: safari.extension.settings.ideKey });
+		currentState = "noPage";
+		dispatchMessageToActiveTabInActiveWindow("getState", { ideKey: safari.extension.settings.ideKey });
+	}
+
+	// Dispatch a message to the active tab if there is one
+	function dispatchMessageToActiveTabInActiveWindow(command, message) {
+		// Check if there is a page in the activeTab
+		if (safari.application.activeBrowserWindow.activeTab.page) {
+			safari.application.activeBrowserWindow.activeTab.page.dispatchMessage(command, message);
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	return exposed;

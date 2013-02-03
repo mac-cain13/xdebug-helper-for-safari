@@ -33,7 +33,7 @@
 						<key>Command</key>
 						<string>debug</string>
 						<key>Identifier</key>
-						<string>debug</string>
+						<string>debugging</string>
 						<key>Image</key>
 						<string>bug.png</string>
 						<key>Title</key>
@@ -43,7 +43,7 @@
 						<key>Command</key>
 						<string>profile</string>
 						<key>Identifier</key>
-						<string>profile</string>
+						<string>profiling</string>
 						<key>Image</key>
 						<string>clock.png</string>
 						<key>Title</key>
@@ -53,7 +53,7 @@
 						<key>Command</key>
 						<string>trace</string>
 						<key>Identifier</key>
-						<string>trace</string>
+						<string>tracing</string>
 						<key>Image</key>
 						<string>script.png</string>
 						<key>Title</key>
@@ -65,7 +65,7 @@
 						<key>Command</key>
 						<string>disable</string>
 						<key>Identifier</key>
-						<string>disable</string>
+						<string>disabled</string>
 						<key>Image</key>
 						<string>bug-gray.png</string>
 						<key>Title</key>

@@ -92,6 +92,7 @@ var xdebug = (function() {
 })();
 
 // Only install event listeners in the main page, not in frames etc
-if (window.top === window) {
+//  and only when the page is a http(s):// page (not topsites:// or someting else)
+if (window.top === window && window.location.protocol.match(/http(s?):/ig) !== null) {
 	safari.self.addEventListener("message", xdebug.onMessage, false);
 }

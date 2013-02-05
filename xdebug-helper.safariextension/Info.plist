@@ -119,7 +119,7 @@
 		</dict>
 	</dict>
 	<key>Update Manifest URL</key>
-	<string>https://raw.github.com/wrep/xdebug-helper-for-safari/master/updatemanifest.plist</string>
+	<string>http://wrep.github.com/xdebug-helper-for-safari/updatemanifest.plist</string>
 	<key>Website</key>
 	<string>https://github.com/wrep/xdebug-helper-for-safari</string>
 </dict>

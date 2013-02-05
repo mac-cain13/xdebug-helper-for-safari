@@ -5,7 +5,9 @@ var xdebug = (function() {
 			onPageChanged : function(event) {
 				// Triggers an update of the currentState variable
 				currentState = "noPage";
-				safari.extension.toolbarItems[0].badge = 0;
+				for (var i in safari.extension.toolbarItems) {
+					safari.extension.toolbarItems[i].badge = 0;
+				}
 
 				dispatchMessageToActiveTabInActiveWindow("getState", { ideKey: safari.extension.settings.ideKey });
 			},
@@ -31,7 +33,14 @@ var xdebug = (function() {
 			onMessage : function(event) {
 				if ("getStateResponse" == event.name || "setStateResponse" == event.name) {
 					currentState = event.message;
-					safari.extension.toolbarItems[0].badge = ("noPage" != currentState && "disabled" != currentState);
+					for (var i in safari.extension.toolbarItems) {
+						var toolbarItem = safari.extension.toolbarItems[i];
+						if (toolbarItem.browserWindow == safari.application.activeBrowserWindow) {
+							toolbarItem.badge = ("noPage" != currentState && "disabled" != currentState);
+						} else {
+							toolbarItem.badge = 0;
+						}
+					}
 				}
 			}
 		};

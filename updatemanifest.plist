@@ -14,7 +14,7 @@
        <key>CFBundleShortVersionString</key>
        <string>1.0.0</string>
        <key>URL</key>
-       <string>http://dump.wrep.nl/mathijs/xdebug-helper.safariextz</string>
+       <string>http://wrep.github.com/xdebug-helper-for-safari/xdebug-helper.safariextz</string>
      </dict>
    </array>
 </dict>

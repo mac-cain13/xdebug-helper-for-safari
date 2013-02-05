@@ -10,9 +10,9 @@
        <key>Developer Identifier</key>
        <string>28RC4265JU</string>
        <key>CFBundleVersion</key>
-       <string>0.1</string>
+       <string>1.0.0</string>
        <key>CFBundleShortVersionString</key>
-       <string>0.1</string>
+       <string>1.0.0</string>
        <key>URL</key>
        <string>http://dump.wrep.nl/mathijs/xdebug-helper.safariextz</string>
      </dict>

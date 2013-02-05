@@ -5,10 +5,6 @@ Debugging, profiling and tracing PHP code with [Xdebug](http://xdebug.org/) is v
 Xdebug with cookies or adding POST/GET variables is way too hard. This extension will help you to enable/disable
 debugging, profiling and tracing of your PHP-code easily.
 
-State of the extension
-----------------------
-The extension is currently functional, but it is not yet stable and/or finished. Contributions are very welcome!
-
 How to install this extension?
 ------------------------------
 **Stable version:** Not yet available, we hope to release stable versions through the Safari Extension Gallery.

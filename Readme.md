@@ -7,7 +7,9 @@ debugging, profiling and tracing of your PHP-code easily.
 
 How to install this extension?
 ------------------------------
-**Stable version:** [Download the latest version](http://wrep.github.com/xdebug-helper-for-safari/xdebug-helper.safariextz) and open the file to install it in Safari. We also hope to release stable versions through the [Safari Extension Gallery](https://extensions.apple.com).
+**Stable version:**  Go to the [Safari Extension Gallery](https://extensions.apple.com) and look for "Xdebug Helper" in the "Developer" category.
+
+Alternatively, [download the latest version](http://wrep.github.com/xdebug-helper-for-safari/xdebug-helper.safariextz) and open the file to install it in Safari.
 
 **Development version:** [Download the source from GitHub](https://github.com/wrep/xdebug-helper-for-safari/archive/master.zip)
 and [load the extension into the extensionbuilder](https://developer.apple.com/library/safari/#documentation/Tools/Conceptual/SafariExtensionGuide/UsingExtensionBuilder/UsingExtensionBuilder.html%23//apple_ref/doc/uid/TP40009977-CH2-SW1)

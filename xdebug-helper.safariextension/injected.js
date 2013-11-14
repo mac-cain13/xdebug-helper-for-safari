@@ -63,7 +63,7 @@ var xdebug = (function() {
 
 	// Get the cookie contents
 	function getCookie(name) {
-		// Search for the start of the goven cookie
+		// Search for the start of the given cookie
 		var prefix = name + "=",
 			cookieStartIndex = document.cookie.indexOf(prefix),
 			cookieEndIndex;

@@ -47,7 +47,7 @@ var xdebug = (function() {
 
 	// Dispatch a message to the active tab if there is one
 	function dispatchMessageToActiveTabInActiveWindow(command, message) {
-		// Check if there is a page in the activeTab
+		// Check if there is a page in the active tab
 		if (safari.application.activeBrowserWindow.activeTab.page) {
 			safari.application.activeBrowserWindow.activeTab.page.dispatchMessage(command, message);
 			return true;
